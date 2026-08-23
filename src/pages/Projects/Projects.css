@@ -1,0 +1,711 @@
+.projects-page {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.projects-page .section-title span,
+.philosophy-content h2 span {
+  background: linear-gradient(
+    110deg,
+    var(--primary-light),
+    var(--accent)
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+
+  color: transparent;
+}
+
+.projects-hero {
+  padding-top: 90px;
+  padding-bottom: 80px;
+}
+
+/* ================= FILTERS ================= */
+
+.projects-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  margin-bottom: 35px;
+}
+
+.project-filter {
+  padding: 10px 18px;
+
+  border: 1px solid var(--border);
+  border-radius: 10px;
+
+  background: rgba(30, 41, 59, 0.35);
+
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  transition:
+    color var(--transition-normal),
+    background var(--transition-normal),
+    border-color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+.project-filter:hover {
+  color: var(--text-primary);
+
+  border-color: rgba(56, 189, 248, 0.3);
+
+  transform: translateY(-2px);
+}
+
+.project-filter.active {
+  border-color: rgba(56, 189, 248, 0.4);
+
+  background: rgba(56, 189, 248, 0.1);
+
+  color: var(--accent);
+}
+
+/* ================= GRID ================= */
+
+.projects-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 22px;
+}
+
+/* ================= CARD ================= */
+
+.project-card {
+  position: relative;
+
+  overflow: hidden;
+
+  border: 1px solid var(--border);
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(30, 41, 59, 0.72),
+      rgba(15, 23, 42, 0.75)
+    );
+
+  transition:
+    border-color var(--transition-normal),
+    box-shadow var(--transition-normal);
+}
+
+.project-card:hover {
+  border-color: rgba(56, 189, 248, 0.3);
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+.project-card.featured {
+  grid-column: span 2;
+}
+
+/* ================= VISUAL ================= */
+
+.project-visual {
+  position: relative;
+
+  height: 230px;
+
+  display: grid;
+  place-items: center;
+
+  overflow: hidden;
+
+  border-bottom: 1px solid var(--border);
+
+  background:
+    radial-gradient(
+      circle at 50% 40%,
+      rgba(56, 189, 248, 0.14),
+      transparent 45%
+    ),
+    linear-gradient(
+      135deg,
+      rgba(30, 64, 175, 0.3),
+      rgba(15, 23, 42, 0.9)
+    );
+}
+
+.project-card.featured .project-visual {
+  height: 280px;
+}
+
+.project-grid-pattern {
+  position: absolute;
+  inset: 0;
+
+  opacity: 0.35;
+
+  background-image:
+    linear-gradient(
+      rgba(148, 163, 184, 0.08) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(148, 163, 184, 0.08) 1px,
+      transparent 1px
+    );
+
+  background-size: 30px 30px;
+
+  mask-image: linear-gradient(
+    to bottom,
+    black,
+    transparent
+  );
+}
+
+.project-icon {
+  position: relative;
+  z-index: 2;
+
+  width: 82px;
+  height: 82px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 20px;
+
+  background: rgba(15, 23, 42, 0.65);
+
+  color: var(--accent);
+
+  font-size: 34px;
+
+  box-shadow:
+    0 0 50px rgba(56, 189, 248, 0.12);
+
+  transition:
+    transform 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.project-card:hover .project-icon {
+  transform: translateY(-5px) scale(1.05);
+
+  box-shadow:
+    0 0 60px rgba(56, 189, 248, 0.2);
+}
+
+.project-code-lines {
+  position: absolute;
+
+  left: 8%;
+  bottom: 28px;
+
+  width: 84%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  opacity: 0.3;
+}
+
+.project-code-lines span {
+  display: block;
+
+  height: 2px;
+
+  border-radius: 5px;
+
+  background: var(--accent);
+}
+
+.project-code-lines span:nth-child(1) {
+  width: 70%;
+}
+
+.project-code-lines span:nth-child(2) {
+  width: 48%;
+}
+
+.project-code-lines span:nth-child(3) {
+  width: 62%;
+}
+
+.project-code-lines span:nth-child(4) {
+  width: 35%;
+}
+
+.featured-label {
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  padding: 6px 10px;
+
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 20px;
+
+  background: rgba(15, 23, 42, 0.7);
+
+  color: var(--accent);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.7px;
+}
+
+/* ================= CONTENT ================= */
+
+.project-content {
+  padding: 26px;
+}
+
+.project-category {
+  margin-bottom: 9px;
+
+  color: var(--accent);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.project-content h2 {
+  margin-bottom: 11px;
+
+  color: var(--text-primary);
+
+  font-size: 22px;
+  line-height: 1.3;
+}
+
+.project-content p {
+  margin-bottom: 20px;
+
+  color: var(--text-muted);
+
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+/* ================= TECHNOLOGIES ================= */
+
+.technology-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+
+  margin-bottom: 22px;
+}
+
+.technology-tag {
+  padding: 5px 8px;
+
+  border: 1px solid rgba(148, 163, 184, 0.1);
+  border-radius: 6px;
+
+  background: rgba(148, 163, 184, 0.05);
+
+  color: var(--text-secondary);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+}
+
+.technology-tag.more {
+  color: var(--accent);
+
+  border-color: rgba(56, 189, 248, 0.15);
+}
+
+/* ================= ACTIONS ================= */
+
+.project-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.project-details-btn,
+.project-github-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+
+  min-height: 40px;
+
+  padding: 9px 13px;
+
+  border-radius: 9px;
+
+  font-size: 12px;
+
+  cursor: pointer;
+
+  text-decoration: none;
+
+  transition:
+    transform var(--transition-normal),
+    background var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+.project-details-btn {
+  border: 1px solid rgba(56, 189, 248, 0.25);
+
+  background: rgba(56, 189, 248, 0.08);
+
+  color: var(--accent);
+}
+
+.project-details-btn:hover {
+  transform: translateY(-2px);
+
+  background: rgba(56, 189, 248, 0.14);
+}
+
+.project-github-btn {
+  border: 1px solid var(--border);
+
+  background: rgba(15, 23, 42, 0.4);
+
+  color: var(--text-secondary);
+}
+
+.project-github-btn:hover {
+  transform: translateY(-2px);
+
+  border-color: rgba(148, 163, 184, 0.3);
+
+  color: var(--text-primary);
+}
+
+.project-unavailable {
+  color: var(--text-muted);
+
+  font-size: 11px;
+}
+
+/* ================= PHILOSOPHY ================= */
+
+.project-philosophy {
+  padding-top: 30px;
+  padding-bottom: 120px;
+
+  border-top: 1px solid var(--border);
+}
+
+.philosophy-card {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  gap: 35px;
+
+  padding: 45px;
+
+  overflow: hidden;
+
+  border: 1px solid rgba(56, 189, 248, 0.18);
+  border-radius: 20px;
+
+  background:
+    radial-gradient(
+      circle at 85% 30%,
+      rgba(56, 189, 248, 0.1),
+      transparent 35%
+    ),
+    rgba(30, 41, 59, 0.45);
+}
+
+.philosophy-number {
+  color: rgba(56, 189, 248, 0.12);
+
+  font-size: 100px;
+  font-weight: 800;
+
+  line-height: 1;
+}
+
+.philosophy-content {
+  max-width: 700px;
+}
+
+.philosophy-content h2 {
+  margin-bottom: 14px;
+
+  color: var(--text-primary);
+
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.philosophy-content p {
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* ================= MODAL ================= */
+
+.project-modal-overlay {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 1000;
+
+  display: grid;
+  place-items: center;
+
+  padding: 20px;
+
+  background: rgba(2, 6, 23, 0.75);
+
+  backdrop-filter: blur(10px);
+}
+
+.project-modal {
+  position: relative;
+
+  width: min(700px, 100%);
+
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  padding: 35px;
+
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(30, 41, 59, 0.98),
+      rgba(15, 23, 42, 0.98)
+    );
+
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+  position: absolute;
+
+  top: 18px;
+  right: 18px;
+
+  width: 36px;
+  height: 36px;
+
+  display: grid;
+  place-items: center;
+
+  border: 1px solid var(--border);
+  border-radius: 9px;
+
+  background: rgba(15, 23, 42, 0.5);
+
+  color: var(--text-muted);
+
+  cursor: pointer;
+
+  font-size: 18px;
+}
+
+.modal-close:hover {
+  color: var(--text-primary);
+
+  border-color: rgba(148, 163, 184, 0.3);
+}
+
+.modal-project-icon {
+  width: 60px;
+  height: 60px;
+
+  display: grid;
+  place-items: center;
+
+  margin-bottom: 20px;
+
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 15px;
+
+  background: rgba(56, 189, 248, 0.08);
+
+  color: var(--accent);
+
+  font-size: 25px;
+}
+
+.project-modal h2 {
+  max-width: 550px;
+
+  margin-bottom: 15px;
+
+  color: var(--text-primary);
+
+  font-size: 27px;
+  line-height: 1.3;
+}
+
+.modal-description {
+  margin-bottom: 28px;
+
+  color: var(--text-muted);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.modal-section {
+  margin-bottom: 25px;
+}
+
+.modal-section h3 {
+  margin-bottom: 12px;
+
+  color: var(--text-primary);
+
+  font-size: 14px;
+}
+
+.modal-tech {
+  margin-bottom: 0;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid var(--border);
+}
+
+.modal-github,
+.modal-demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 11px 15px;
+
+  border-radius: 9px;
+
+  text-decoration: none;
+
+  font-size: 12px;
+}
+
+.modal-github {
+  background: var(--accent);
+
+  color: #082f49;
+}
+
+.modal-demo {
+  border: 1px solid var(--border);
+
+  color: var(--text-secondary);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 800px) {
+
+  .projects-hero {
+    padding-top: 65px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card.featured {
+    grid-column: span 1;
+  }
+
+  .project-card.featured .project-visual {
+    height: 230px;
+  }
+
+  .philosophy-card {
+    padding: 30px;
+
+    gap: 20px;
+  }
+
+  .philosophy-number {
+    font-size: 70px;
+  }
+
+}
+
+@media (max-width: 550px) {
+
+  .projects-filters {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .project-filter {
+    text-align: center;
+  }
+
+  .project-content {
+    padding: 21px;
+  }
+
+  .project-content h2 {
+    font-size: 19px;
+  }
+
+  .project-actions {
+    flex-wrap: wrap;
+  }
+
+  .project-details-btn,
+  .project-github-btn {
+    flex: 1;
+  }
+
+  .philosophy-card {
+    display: block;
+
+    padding: 28px;
+  }
+
+  .philosophy-number {
+    margin-bottom: 15px;
+
+    font-size: 55px;
+  }
+
+  .project-modal {
+    padding: 25px 20px;
+  }
+
+  .project-modal h2 {
+    font-size: 22px;
+  }
+
+}

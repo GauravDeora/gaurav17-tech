@@ -1,0 +1,706 @@
+/* =========================================================
+   RESUME PAGE
+   All styles are scoped to .resume-page
+========================================================= */
+
+.resume-page {
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 80px;
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.resume-page .resume-hero {
+  width: 100%;
+  padding: 90px 6% 75px;
+  text-align: center;
+}
+
+.resume-page .resume-hero-inner {
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.resume-page .resume-section-label {
+  display: inline-block;
+  margin-bottom: 12px;
+
+  color: var(--accent-color);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  line-height: 1.4;
+}
+
+.resume-page .resume-hero-title {
+  margin: 0 0 25px;
+
+  font-size: clamp(3rem, 7vw, 5.2rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.resume-page .resume-hero-title span {
+  color: var(--accent-color);
+}
+
+.resume-page .resume-hero-description {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =========================================================
+   ACTION BUTTONS
+========================================================= */
+
+.resume-page .resume-action-group {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: 15px;
+  margin-top: 35px;
+}
+
+.resume-page .resume-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+  min-height: 48px;
+  padding: 13px 23px;
+
+  border-radius: 12px;
+
+  text-decoration: none;
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.resume-page .resume-action-primary {
+  color: #ffffff;
+  background: var(--accent-color);
+}
+
+.resume-page .resume-action-secondary {
+  color: var(--accent-color);
+  background: transparent;
+  border: 1px solid var(--accent-color);
+}
+
+.resume-page .resume-action:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}
+
+
+/* =========================================================
+   CONTENT SECTIONS
+========================================================= */
+
+.resume-page .resume-content-section {
+  width: min(1100px, 88%);
+  margin: 0 auto 95px;
+}
+
+.resume-page .resume-section-heading {
+  display: flex;
+  align-items: center;
+
+  gap: 17px;
+  margin-bottom: 38px;
+}
+
+.resume-page .resume-heading-icon {
+  flex: 0 0 52px;
+
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 15px;
+
+  color: var(--accent-color);
+  background: rgba(0, 200, 255, 0.12);
+
+  font-size: 1.2rem;
+}
+
+.resume-page .resume-heading-text {
+  min-width: 0;
+}
+
+.resume-page .resume-heading-text .resume-section-label {
+  margin-bottom: 5px;
+}
+
+.resume-page .resume-heading-text h2 {
+  margin: 0;
+
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  line-height: 1.2;
+}
+
+
+/* =========================================================
+   SUMMARY
+========================================================= */
+
+.resume-page .resume-summary-card {
+  width: 100%;
+  padding: 32px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+
+  background: var(--card-bg);
+}
+
+.resume-page .resume-summary-card p {
+  margin: 0 0 16px;
+
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+
+.resume-page .resume-summary-card p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   EXPERIENCE
+========================================================= */
+
+.resume-page .resume-experience-list {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  gap: 22px;
+}
+
+.resume-page .resume-experience-card {
+  width: 100%;
+  min-width: 0;
+
+  padding: 30px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+
+  background: var(--card-bg);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.resume-page .resume-experience-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+}
+
+.resume-page .resume-experience-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  width: 100%;
+  gap: 25px;
+}
+
+.resume-page .resume-experience-heading {
+  min-width: 0;
+  flex: 1;
+}
+
+.resume-page .resume-experience-date {
+  display: block;
+  margin-bottom: 9px;
+
+  color: var(--accent-color);
+
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.resume-page .resume-experience-heading h3 {
+  margin: 0 0 8px;
+
+  color: var(--text-primary);
+
+  font-size: 1.45rem;
+  line-height: 1.3;
+
+  overflow-wrap: break-word;
+}
+
+.resume-page .resume-experience-heading h4 {
+  margin: 0;
+
+  color: var(--text-primary);
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+
+  overflow-wrap: break-word;
+}
+
+.resume-page .resume-experience-location {
+  margin: 5px 0 0;
+
+  color: var(--text-secondary);
+
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.resume-page .resume-experience-number {
+  flex: 0 0 auto;
+
+  color: var(--accent-color);
+
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.resume-page .resume-experience-divider {
+  width: 100%;
+  height: 1px;
+
+  margin: 25px 0;
+
+  background: var(--border-color);
+}
+
+.resume-page .resume-experience-points {
+  width: 100%;
+
+  margin: 0;
+  padding-left: 20px;
+}
+
+.resume-page .resume-experience-points li {
+  width: 100%;
+
+  margin-bottom: 11px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.95rem;
+  line-height: 1.75;
+
+  overflow-wrap: break-word;
+}
+
+.resume-page .resume-experience-points li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.resume-page .resume-education-list {
+  display: grid;
+
+  width: 100%;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.resume-page .resume-education-card {
+  width: 100%;
+  min-width: 0;
+
+  padding: 28px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+
+  background: var(--card-bg);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.resume-page .resume-education-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+}
+
+.resume-page .resume-education-year {
+  margin-bottom: 14px;
+
+  color: var(--accent-color);
+
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.resume-page .resume-education-card h3 {
+  margin: 0 0 10px;
+
+  color: var(--text-primary);
+
+  font-size: 1.2rem;
+  line-height: 1.4;
+
+  overflow-wrap: break-word;
+}
+
+.resume-page .resume-education-card h4 {
+  margin: 0 0 14px;
+
+  color: var(--accent-color);
+
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  overflow-wrap: break-word;
+}
+
+.resume-page .resume-education-card p {
+  margin: 0 0 15px;
+
+  color: var(--text-secondary);
+
+  font-size: 0.9rem;
+  line-height: 1.65;
+
+  overflow-wrap: break-word;
+}
+
+.resume-page .resume-education-card strong {
+  color: var(--accent-color);
+
+  font-size: 1rem;
+}
+
+
+/* =========================================================
+   TECHNICAL SKILLS
+========================================================= */
+
+.resume-page .resume-skills-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  width: 100%;
+  gap: 12px;
+}
+
+.resume-page .resume-skills-list span {
+  display: inline-flex;
+  align-items: center;
+
+  max-width: 100%;
+  min-height: 42px;
+
+  padding: 9px 16px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 11px;
+
+  color: var(--text-primary);
+  background: var(--card-bg);
+
+  font-size: 0.9rem;
+  font-weight: 600;
+
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.resume-page .resume-skills-list span:hover {
+  transform: translateY(-3px);
+
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+
+/* =========================================================
+   INTERESTS
+========================================================= */
+
+.resume-page .resume-interest-list {
+  display: grid;
+
+  width: 100%;
+
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+.resume-page .resume-interest-card {
+  width: 100%;
+  min-width: 0;
+
+  padding: 28px;
+
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+
+  background: var(--card-bg);
+
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.resume-page .resume-interest-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent-color);
+}
+
+.resume-page .resume-interest-card h3 {
+  margin: 0 0 12px;
+
+  color: var(--accent-color);
+
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+.resume-page .resume-interest-card p {
+  margin: 0;
+
+  color: var(--text-secondary);
+
+  font-size: 0.92rem;
+  line-height: 1.7;
+
+  overflow-wrap: break-word;
+}
+
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.resume-page .resume-final-cta {
+  width: min(900px, 88%);
+
+  margin: 0 auto;
+
+  padding: 65px 30px;
+
+  text-align: center;
+
+  border: 1px solid var(--border-color);
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(0, 200, 255, 0.12),
+      rgba(80, 70, 220, 0.12)
+    );
+}
+
+.resume-page .resume-final-cta h2 {
+  margin: 8px 0 18px;
+
+  font-size: clamp(2rem, 5vw, 3.3rem);
+  line-height: 1.2;
+}
+
+.resume-page .resume-final-cta h2 span {
+  color: var(--accent-color);
+}
+
+.resume-page .resume-final-cta p {
+  width: 100%;
+  max-width: 600px;
+
+  margin: 0 auto 28px;
+
+  color: var(--text-secondary);
+
+  line-height: 1.7;
+}
+
+.resume-page .resume-final-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  min-height: 48px;
+
+  padding: 13px 23px;
+
+  border-radius: 12px;
+
+  color: #ffffff;
+  background: var(--accent-color);
+
+  text-decoration: none;
+  font-weight: 700;
+
+  transition: transform 0.25s ease;
+}
+
+.resume-page .resume-final-button:hover {
+  transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .resume-page .resume-content-section {
+    width: 90%;
+  }
+
+  .resume-page .resume-education-list,
+  .resume-page .resume-interest-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+  .resume-page .resume-hero {
+    padding: 65px 5% 55px;
+  }
+
+  .resume-page .resume-content-section {
+    width: 90%;
+    margin-bottom: 70px;
+  }
+
+  .resume-page .resume-section-heading {
+    align-items: flex-start;
+    gap: 13px;
+    margin-bottom: 28px;
+  }
+
+  .resume-page .resume-heading-icon {
+    flex-basis: 45px;
+
+    width: 45px;
+    height: 45px;
+  }
+
+  .resume-page .resume-heading-text h2 {
+    font-size: 1.7rem;
+  }
+
+  .resume-page .resume-summary-card {
+    padding: 23px;
+  }
+
+  .resume-page .resume-experience-card {
+    padding: 23px;
+  }
+
+  .resume-page .resume-experience-header {
+    gap: 15px;
+  }
+
+  .resume-page .resume-experience-number {
+    font-size: 1.3rem;
+  }
+
+  .resume-page .resume-experience-heading h3 {
+    font-size: 1.25rem;
+  }
+
+  .resume-page .resume-education-list,
+  .resume-page .resume-interest-list {
+    grid-template-columns: 1fr;
+  }
+
+  .resume-page .resume-education-card,
+  .resume-page .resume-interest-card {
+    padding: 23px;
+  }
+
+  .resume-page .resume-final-cta {
+    width: 90%;
+    padding: 50px 22px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 450px) {
+
+  .resume-page .resume-hero-title {
+    font-size: 2.7rem;
+  }
+
+  .resume-page .resume-action-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .resume-page .resume-action {
+    width: 100%;
+  }
+
+  .resume-page .resume-experience-header {
+    display: block;
+  }
+
+  .resume-page .resume-experience-number {
+    display: none;
+  }
+
+  .resume-page .resume-experience-divider {
+    margin: 20px 0;
+  }
+
+}

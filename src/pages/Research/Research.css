@@ -1,0 +1,347 @@
+.research-page {
+  min-height: 100vh;
+  padding: 80px 7%;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.research-header {
+  max-width: 850px;
+  margin-bottom: 80px;
+}
+
+.section-tag {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #58e6ff;
+}
+
+.research-header h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 5vw, 4.5rem);
+  line-height: 1.05;
+  font-weight: 800;
+}
+
+.research-header h1 span {
+  color: #58e6ff;
+}
+
+.research-header p {
+  max-width: 720px;
+  margin-top: 25px;
+  color: #b9c6e4;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   SECTION HEADING
+========================= */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 40px;
+}
+
+.heading-line {
+  width: 35px;
+  height: 3px;
+  background: #58e6ff;
+  border-radius: 10px;
+}
+
+.section-heading h2 {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.experience-section {
+  max-width: 1100px;
+  margin: 0 auto 100px;
+}
+
+.experience-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 25px;
+  margin-bottom: 45px;
+}
+
+.experience-marker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.experience-marker::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  width: 2px;
+  height: calc(100% + 45px);
+  background: rgba(88, 230, 255, 0.25);
+}
+
+.experience-card:last-child .experience-marker::after {
+  display: none;
+}
+
+.marker-dot {
+  width: 14px;
+  height: 14px;
+  margin-top: 8px;
+  border-radius: 50%;
+  background: #58e6ff;
+  box-shadow: 0 0 18px rgba(88, 230, 255, 0.7);
+  z-index: 2;
+}
+
+
+.experience-content {
+  padding: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.045);
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+.experience-content:hover {
+  transform: translateY(-5px);
+  border-color: rgba(88, 230, 255, 0.45);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+
+.experience-top {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.experience-type {
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  color: #58e6ff;
+}
+
+.experience-top h3 {
+  margin: 10px 0 5px;
+  font-size: 1.45rem;
+}
+
+.experience-role {
+  margin: 0;
+  color: #aebbd8;
+}
+
+.experience-date {
+  padding: 8px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-size: 0.78rem;
+  color: #58e6ff;
+  background: rgba(88, 230, 255, 0.08);
+  border: 1px solid rgba(88, 230, 255, 0.2);
+}
+
+
+.experience-body {
+  margin-top: 25px;
+}
+
+.experience-body h4 {
+  margin-bottom: 12px;
+  font-size: 1.15rem;
+}
+
+.experience-body p {
+  color: #b9c6e4;
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+
+.experience-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.experience-highlights span {
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #d8faff;
+  background: rgba(88, 230, 255, 0.08);
+  border: 1px solid rgba(88, 230, 255, 0.15);
+}
+
+
+/* =========================
+   RESEARCH INTERESTS
+========================= */
+
+.research-interests {
+  max-width: 1100px;
+  margin: 0 auto 100px;
+}
+
+.interests-intro {
+  max-width: 700px;
+  margin-top: -20px;
+  margin-bottom: 35px;
+  color: #aebbd8;
+  line-height: 1.7;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.interest-card {
+  position: relative;
+  padding: 30px;
+  min-height: 190px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: 0.3s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(88, 230, 255, 0.4);
+}
+
+.interest-card:last-child {
+  grid-column: span 2;
+}
+
+.interest-number {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #58e6ff;
+}
+
+.interest-card h3 {
+  margin: 14px 0 10px;
+  font-size: 1.2rem;
+}
+
+.interest-card p {
+  margin: 0;
+  color: #aebbd8;
+  line-height: 1.7;
+}
+
+
+/* =========================
+   CURRENT DIRECTION
+========================= */
+
+.research-direction {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.direction-content {
+  padding: 55px;
+  border-radius: 25px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(88, 230, 255, 0.12),
+      rgba(80, 60, 180, 0.1)
+    );
+  border: 1px solid rgba(88, 230, 255, 0.2);
+}
+
+.direction-content h2 {
+  max-width: 700px;
+  margin: 0 0 20px;
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.direction-content h2 span {
+  color: #58e6ff;
+}
+
+.direction-content p {
+  max-width: 800px;
+  margin: 0;
+  color: #b9c6e4;
+  line-height: 1.8;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+
+  .research-page {
+    padding: 60px 5%;
+  }
+
+  .research-header {
+    margin-bottom: 60px;
+  }
+
+  .research-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .experience-card {
+    grid-template-columns: 20px 1fr;
+    gap: 15px;
+  }
+
+  .experience-content {
+    padding: 22px;
+  }
+
+  .experience-top {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .experience-date {
+    align-self: flex-start;
+  }
+
+  .interest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .interest-card:last-child {
+    grid-column: auto;
+  }
+
+  .direction-content {
+    padding: 30px 22px;
+  }
+
+}
