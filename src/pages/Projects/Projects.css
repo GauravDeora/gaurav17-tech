@@ -84,6 +84,8 @@
 
 .project-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   overflow: hidden;
 
@@ -110,7 +112,7 @@
 }
 
 .project-card.featured {
-  grid-column: span 2;
+  grid-column: span 1;
 }
 
 /* ================= VISUAL ================= */
@@ -141,7 +143,7 @@
 }
 
 .project-card.featured .project-visual {
-  height: 280px;
+  height: 230px;
 }
 
 .project-grid-pattern {
@@ -268,6 +270,10 @@
 /* ================= CONTENT ================= */
 
 .project-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+
   padding: 26px;
 }
 
@@ -338,6 +344,8 @@
   display: flex;
   align-items: center;
   gap: 10px;
+
+  margin-top: auto;
 }
 
 .project-details-btn,
@@ -404,8 +412,8 @@
 /* ================= PHILOSOPHY ================= */
 
 .project-philosophy {
-  padding-top: 30px;
-  padding-bottom: 120px;
+  padding-top: 75px;
+  padding-bottom: 75px;
 
   border-top: 1px solid var(--border);
 }
@@ -413,10 +421,7 @@
 .philosophy-card {
   position: relative;
 
-  display: flex;
-  align-items: center;
-
-  gap: 35px;
+  display: block;
 
   padding: 45px;
 
@@ -434,17 +439,39 @@
     rgba(30, 41, 59, 0.45);
 }
 
-.philosophy-number {
-  color: rgba(56, 189, 248, 0.12);
+.philosophy-content {
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
 
-  font-size: 100px;
-  font-weight: 800;
-
-  line-height: 1;
+  text-align: center;
 }
 
-.philosophy-content {
-  max-width: 700px;
+.philosophy-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  margin-bottom: 18px;
+
+  color: var(--accent);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  text-transform: none;
+}
+
+.philosophy-status-dot {
+  width: 9px;
+  height: 9px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+  background: #4ade80;
+
+  box-shadow: 0 0 10px rgba(74, 222, 128, 0.45);
 }
 
 .philosophy-content h2 {

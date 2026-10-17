@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { FiMenu, FiX, FiDownload } from "react-icons/fi";
+import { FiMenu, FiX, FiSun, FiMoon } from "react-icons/fi";
 import "./Navbar.css";
 
 const navLinks = [
@@ -18,17 +18,37 @@ const navLinks = [
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const [isDark, setIsDark] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+
+    // Use the saved preference, or default to dark mode.
+    return savedTheme ? savedTheme === "dark" : true;
+  });
+
+  // Apply the selected theme and save the preference.
+  useEffect(() => {
+    const theme = isDark ? "dark" : "light";
+
+    document.documentElement.setAttribute("data-theme", theme);
+    localStorage.setItem("theme", theme);
+  }, [isDark]);
+
   const closeMenu = () => {
     setMenuOpen(false);
+  };
+
+  const toggleTheme = () => {
+    setIsDark((currentTheme) => !currentTheme);
   };
 
   return (
     <header className="navbar">
       <div className="navbar-container">
-        
         <NavLink to="/" className="navbar-logo" onClick={closeMenu}>
           <span className="logo-mark">GD</span>
-          <span className="logo-text">Gaurav<span>.</span></span>
+          <span className="logo-text">
+            Gaurav<span>.</span>
+          </span>
         </NavLink>
 
         <nav className={`navbar-links ${menuOpen ? "mobile-open" : ""}`}>
@@ -44,27 +64,29 @@ function Navbar() {
               {link.name}
             </NavLink>
           ))}
-
-          <NavLink
-            to="/resume"
-            className="resume-button"
-            onClick={closeMenu}
-          >
-            <FiDownload />
-            Resume
-          </NavLink>
         </nav>
 
         <button
           type="button"
+          className="theme-toggle"
+          onClick={toggleTheme}
+          aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
+          title={`Switch to ${isDark ? "light" : "dark"} mode`}
+        >
+          {isDark ? <FiSun /> : <FiMoon />}
+        </button>
+
+        <button
+          type="button"
           className="mobile-menu-button"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
+          onClick={() => setMenuOpen((open) => !open)}
+          aria-label={
+            menuOpen ? "Close navigation menu" : "Open navigation menu"
+          }
           aria-expanded={menuOpen}
         >
           {menuOpen ? <FiX /> : <FiMenu />}
         </button>
-
       </div>
     </header>
   );

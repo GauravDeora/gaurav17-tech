@@ -7,7 +7,7 @@ import {
   FiMail,
   FiCode,
 } from "react-icons/fi";
-import { SiLeetcode } from "react-icons/si";
+import { SiLeetcode, SiCodechef } from "react-icons/si";
 import { Link } from "react-router-dom";
 import "./Home.css";
 
@@ -20,12 +20,22 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: <FiLinkedin />,
-    url: "https://www.linkedin.com/",
+    url: "https://www.linkedin.com/in/gaurav-deora-835b49323/",
   },
   {
     name: "Email",
     icon: <FiMail />,
-    url: "mailto:your-email@example.com",
+    url: "https://mail.google.com/mail/?view=cm&fs=1&to=gauravdeora17@gmail.com",
+  },
+  {
+    name: "LeetCode",
+    icon: <SiLeetcode />,
+    url: "https://leetcode.com/u/ImperfectONE/",
+  },
+  {
+    name: "CodeChef",
+    icon: <SiCodechef />,
+    url: "https://www.codechef.com/users/imperfectone",
   },
 ];
 
@@ -130,26 +140,22 @@ function Home() {
                   <a
                     key={social.name}
                     href={social.url}
-                    target={social.url.startsWith("http") ? "_blank" : undefined}
+                    target={
+                      social.url.startsWith("http")
+                        ? "_blank"
+                        : undefined
+                    }
                     rel={
                       social.url.startsWith("http")
                         ? "noopener noreferrer"
                         : undefined
                     }
                     aria-label={social.name}
+                    title={social.name}
                   >
                     {social.icon}
                   </a>
                 ))}
-
-                <a
-                  href="https://leetcode.com/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="LeetCode"
-                >
-                  <SiLeetcode />
-                </a>
               </div>
             </motion.div>
           </motion.div>
@@ -196,7 +202,10 @@ function Home() {
                 </p>
 
                 <p className="code-double-indent">
-                  <span className="code-string">"Software Engineering"</span>,
+                  <span className="code-string">
+                    "Software Engineering"
+                  </span>
+                  ,
                 </p>
 
                 <p className="code-double-indent">
@@ -211,9 +220,7 @@ function Home() {
 
                 <p className="code-indent">
                   <span className="code-property">status:</span>{" "}
-                  <span className="code-string">
-                    "Always learning"
-                  </span>
+                  <span className="code-string">"Always learning"</span>
                 </p>
 
                 <p>{"};"}</p>

@@ -9,7 +9,6 @@ import {
   FiLayers,
   FiGitBranch,
   FiTerminal,
-  FiServer,
 } from "react-icons/fi";
 
 import "./Skills.css";
@@ -26,14 +25,9 @@ const categories = [
     icon: <FiCode />,
   },
   {
-    id: "frontend",
-    name: "Frontend",
+    id: "development",
+    name: "Development",
     icon: <FiGlobe />,
-  },
-  {
-    id: "backend",
-    name: "Backend",
-    icon: <FiServer />,
   },
   {
     id: "database",
@@ -47,100 +41,182 @@ const categories = [
   },
 ];
 
+const proficiencyLabels = {
+  1: "Beginner",
+  2: "Advanced Beginner",
+  3: "Intermediate",
+  4: "Proficient",
+  5: "Expert",
+};
+
 const skills = [
+  // Languages
   {
     name: "C",
     category: "languages",
     icon: <FiCode />,
-    level: "Core",
+    level: 4,
   },
   {
     name: "C++",
     category: "languages",
     icon: <FiCode />,
-    level: "Core",
+    level: 2,
+  },
+  {
+    name: "Python",
+    category: "languages",
+    icon: <FiCode />,
+    level: 4,
+  },
+  {
+    name: "Rust",
+    category: "languages",
+    icon: <FiCode />,
+    level: 1,
+  },
+  {
+    name: "Java",
+    category: "languages",
+    icon: <FiCode />,
+    level: 3,
+  },
+  {
+    name: "C#",
+    category: "languages",
+    icon: <FiCode />,
+    level: 1,
   },
   {
     name: "JavaScript",
     category: "languages",
     icon: <FiCode />,
-    level: "Working",
+    level: 4,
   },
+
+  // Frontend, backend, and web development technologies
   {
     name: "HTML",
-    category: "frontend",
+    category: "development",
     icon: <FiGlobe />,
-    level: "Working",
+    level: 4,
   },
   {
     name: "CSS",
-    category: "frontend",
+    category: "development",
     icon: <FiGlobe />,
-    level: "Working",
+    level: 4,
+  },
+  {
+    name: "Bootstrap",
+    category: "development",
+    icon: <FiGlobe />,
+    level: 3,
   },
   {
     name: "React",
-    category: "frontend",
+    category: "development",
     icon: <FiCode />,
-    level: "Learning",
+    level: 4,
+  },
+
+  // Databases
+  {
+    name: "MySQL",
+    category: "database",
+    icon: <FiDatabase />,
+    level: 4,
   },
   {
-    name: "Node.js",
-    category: "backend",
-    icon: <FiServer />,
-    level: "Learning",
-  },
-  {
-    name: "Express.js",
-    category: "backend",
-    icon: <FiServer />,
-    level: "Learning",
+    name: "PostgreSQL",
+    category: "database",
+    icon: <FiDatabase />,
+    level: 4,
   },
   {
     name: "MongoDB",
     category: "database",
     icon: <FiDatabase />,
-    level: "Learning",
+    level: 2,
   },
-  {
-    name: "MySQL",
-    category: "database",
-    icon: <FiDatabase />,
-    level: "Working",
-  },
+
+  // Tools and development environments
   {
     name: "Git",
     category: "tools",
     icon: <FiGitBranch />,
-    level: "Working",
+    level: 4,
   },
   {
     name: "GitHub",
     category: "tools",
     icon: <FiGitBranch />,
-    level: "Working",
+    level: 5,
   },
   {
     name: "VS Code",
     category: "tools",
     icon: <FiTerminal />,
-    level: "Daily",
+    level: 5,
   },
   {
     name: "Linux",
     category: "tools",
     icon: <FiTerminal />,
-    level: "Learning",
+    level: 3,
+  },
+  {
+    name: "Docker",
+    category: "tools",
+    icon: <FiTool />,
+    level: 4,
+  },
+  {
+    name: "Postman",
+    category: "tools",
+    icon: <FiTool />,
+    level: 3,
   },
 ];
 
+// Ordered by broad relevance to software development,
+// followed by more specialized subjects.
 const fundamentals = [
   "Data Structures & Algorithms",
+  "Artificial Intelligence",
   "Object-Oriented Programming",
+  "Database Management Systems",
   "Operating Systems",
   "Computer Networks",
-  "Database Management Systems",
+  "Internet of Things (IoT)",
+  "Blockchain and Cryptocurrency",
+  "Design Thinking",
   "Computer Architecture",
+  "Assembly Language and Microprocessors",
+  "Computer-Aided Graphics Design",
+];
+
+const allSkillsDemandOrder = [
+  "JavaScript",
+  "HTML",
+  "CSS",
+  "Python",
+  "React",
+  "PostgreSQL",
+  "MySQL",
+  "Java",
+  "C#",
+  "C++",
+  "VS Code",
+  "GitHub",
+  "Git",
+  "Docker",
+  "MongoDB",
+  "Bootstrap",
+  "Linux",
+  "Postman",
+  "C",
+  "Rust",
 ];
 
 function Skills() {
@@ -148,27 +224,27 @@ function Skills() {
 
   const filteredSkills =
     activeCategory === "all"
-      ? skills
-      : skills.filter((skill) => skill.category === activeCategory);
+      ? [...skills].sort(
+          (a, b) =>
+            allSkillsDemandOrder.indexOf(a.name) -
+            allSkillsDemandOrder.indexOf(b.name)
+        )
+      : skills
+          .filter((skill) => skill.category === activeCategory)
+          .sort((a, b) => b.level - a.level);
 
   return (
     <main className="skills-page">
-
       {/* ================= HERO ================= */}
 
       <section className="skills-hero section">
         <div className="page-container">
-
           <motion.div
             className="section-header"
             initial={{ opacity: 0, y: 25 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <div className="section-label">
-              02 / SKILLS
-            </div>
-
             <h1 className="section-title">
               Tools I use to
               <span> build.</span>
@@ -180,7 +256,6 @@ function Skills() {
               while learning and building projects.
             </p>
           </motion.div>
-
 
           {/* ================= FILTERS ================= */}
 
@@ -202,9 +277,7 @@ function Skills() {
                     ? "skill-filter active"
                     : "skill-filter"
                 }
-                onClick={() =>
-                  setActiveCategory(category.id)
-                }
+                onClick={() => setActiveCategory(category.id)}
               >
                 {category.icon}
                 <span>{category.name}</span>
@@ -212,15 +285,10 @@ function Skills() {
             ))}
           </motion.div>
 
-
           {/* ================= SKILLS ================= */}
 
-          <motion.div
-            layout
-            className="skills-grid"
-          >
+          <motion.div layout className="skills-grid">
             <AnimatePresence mode="popLayout">
-
               {filteredSkills.map((skill, index) => (
                 <motion.div
                   key={skill.name}
@@ -246,45 +314,43 @@ function Skills() {
                     y: -6,
                   }}
                 >
-
                   <div className="skill-card-top">
-
-                    <div className="skill-icon">
-                      {skill.icon}
-                    </div>
+                    <div className="skill-icon">{skill.icon}</div>
 
                     <span
-                      className={`skill-level ${skill.level
-                        .toLowerCase()
-                        .replace(" ", "-")}`}
+                      className={`skill-level level-${skill.level}`}
+                      title={`Level ${skill.level}`}
                     >
-                      {skill.level}
+                      {proficiencyLabels[skill.level]}
                     </span>
-
                   </div>
 
                   <h3>{skill.name}</h3>
 
-                  <div className="skill-line">
-                    <span></span>
+                  <div 
+                    className="skill-line"
+                    role="img"
+                    aria-label={`Proficiency: ${skill.level} out of 5`}
+                    title={`Level ${skill.level} of 5`}
+                  >
+                    {Array.from({ length: 5 }, (_, segmentIndex) => (
+                      <span
+                        key={`${skill.name}-${segmentIndex}`}
+                        className={segmentIndex < skill.level ? "filled" : ""}
+                      />
+                    ))}
                   </div>
-
                 </motion.div>
               ))}
-
             </AnimatePresence>
           </motion.div>
-
         </div>
       </section>
-
 
       {/* ================= CS FUNDAMENTALS ================= */}
 
       <section className="fundamentals-section section">
-
         <div className="page-container">
-
           <motion.div
             className="section-header"
             initial={{
@@ -302,10 +368,7 @@ function Skills() {
               duration: 0.6,
             }}
           >
-
-            <div className="section-label">
-              COMPUTER SCIENCE
-            </div>
+            <div className="section-label">COMPUTER SCIENCE</div>
 
             <h2 className="section-title">
               Strong <span>foundations.</span>
@@ -316,14 +379,10 @@ function Skills() {
               the fundamentals that form the foundation of good
               software engineering.
             </p>
-
           </motion.div>
 
-
           <div className="fundamentals-grid">
-
             {fundamentals.map((item, index) => (
-
               <motion.div
                 className="fundamental-card"
                 key={item}
@@ -343,7 +402,6 @@ function Skills() {
                   duration: 0.5,
                 }}
               >
-
                 <span className="fundamental-number">
                   {String(index + 1).padStart(2, "0")}
                 </span>
@@ -351,24 +409,16 @@ function Skills() {
                 <FiCpu />
 
                 <span>{item}</span>
-
               </motion.div>
-
             ))}
-
           </div>
-
         </div>
-
       </section>
-
 
       {/* ================= LEARNING ================= */}
 
       <section className="learning-section section">
-
         <div className="page-container">
-
           <motion.div
             className="learning-card"
             initial={{
@@ -386,13 +436,9 @@ function Skills() {
               duration: 0.6,
             }}
           >
-
             <div className="learning-indicator">
-
               <span></span>
-
               CURRENTLY LEARNING
-
             </div>
 
             <h2>
@@ -405,13 +451,9 @@ function Skills() {
               strengthening fundamentals while continuously learning
               new tools and technologies through practical projects.
             </p>
-
           </motion.div>
-
         </div>
-
       </section>
-
     </main>
   );
 }

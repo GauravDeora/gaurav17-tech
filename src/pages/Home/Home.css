@@ -668,3 +668,28 @@
     display: none;
   }
 }
+/* macOS-style code window controls */
+.window-dots {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.window-dots span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.window-dots span:nth-child(1) {
+  background-color: #ff5f57;
+}
+
+.window-dots span:nth-child(2) {
+  background-color: #febc2e;
+}
+
+.window-dots span:nth-child(3) {
+  background-color: #28c840;
+}

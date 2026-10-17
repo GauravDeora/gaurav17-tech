@@ -38,3 +38,33 @@
   --transition-normal: 0.3s ease;
   --transition-slow: 0.5s ease;
 }
+
+/* Light theme */
+:root[data-theme="light"] {
+  /* Backgrounds */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #e2e8f0;
+
+  /* Brand */
+  --primary: #2563eb;
+  --primary-light: #3b82f6;
+  --accent: #0284c7;
+
+  /* Text */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  /* Borders */
+  --border: rgba(15, 23, 42, 0.12);
+  --border-light: rgba(15, 23, 42, 0.2);
+
+  /* Effects */
+  --shadow-sm: 0 4px 15px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 12px 35px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 20px 60px rgba(15, 23, 42, 0.14);
+
+  color-scheme: light;
+}

@@ -19,7 +19,7 @@ const projects = [
       "A defence-oriented asset tracking and geofencing system designed to streamline the management and monitoring of defence assets.",
     description:
       "Developed a Defence Asset Tracking & Geofencing System to streamline the management and monitoring of defence assets. The system combines location tracking, geospatial processing, geofencing and asset management into a unified web application.",
-    category: "Research",
+    category: "Software Development",
     icon: <FiMapPin />,
     featured: true,
 
@@ -61,6 +61,12 @@ const projects = [
       "HTML",
       "CSS",
       "JavaScript",
+      "Bootstrap",
+      "MySQL",
+      "PHP",
+      "XAMPP",
+      "PHP Sessions",
+      "Git",
     ],
 
     github: null,
@@ -70,7 +76,7 @@ const projects = [
 
 const filters = [
   "All",
-  "Research",
+  "Software Development",
   "Web Development",
 ];
 
@@ -108,10 +114,6 @@ function Projects() {
               duration: 0.6,
             }}
           >
-
-            <div className="section-label">
-              03 / PROJECTS
-            </div>
 
             <h1 className="section-title">
               Things I've
@@ -349,13 +351,13 @@ function Projects() {
             }}
           >
 
-            <div className="philosophy-number">
-              03
-            </div>
-
             <div className="philosophy-content">
 
-              <div className="section-label">
+              <div className="philosophy-label">
+                <span
+                  className="philosophy-status-dot"
+                  aria-hidden="true"
+                />
                 HOW I BUILD
               </div>
 
