@@ -6,11 +6,10 @@ function Research() {
 
       {/* Header */}
       <section className="research-header">
-        <span className="section-tag">RESEARCH & EXPERIENCE</span>
 
         <h1>
-          Research, Internships
-          <span> & Practical Experience</span>
+          Research, Internships &
+          <span> Practical Experience.</span>
         </h1>
 
         <p>
@@ -48,7 +47,7 @@ function Research() {
                 <h3>Defence Laboratory, Jodhpur — DRDO</h3>
 
                 <p className="experience-role">
-                  B.Tech CSE Practical Training
+                  Software Development & Research Intern
                 </p>
               </div>
 
@@ -113,7 +112,7 @@ function Research() {
               </div>
 
               <span className="experience-date">
-                Web Development
+                June – July 2025
               </span>
             </div>
 
@@ -226,7 +225,13 @@ function Research() {
 
         <div className="direction-content">
 
-          <span className="section-tag">CURRENT DIRECTION</span>
+          <div className="direction-label">
+            <span
+              className="direction-status-dot"
+              aria-hidden="true"
+            />
+            Current Direction
+          </div>
 
           <h2>
             Learning through

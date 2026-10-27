@@ -26,7 +26,6 @@ function Certifications() {
       date: "10 July 2025",
       duration: "3 June 2025 – 9 July 2025",
       certificate: "/certificates/dhuravstar-certificate.jpg",
-      certificateNo: "5602NUJ03",
       tags: [
         "Web Development",
         "HTML",
@@ -41,11 +40,10 @@ function Certifications() {
 
       {/* Header */}
       <section className="certifications-header">
-        <span className="section-tag">CERTIFICATIONS</span>
 
         <h1>
           Credentials &
-          <span> Achievements</span>
+          <span> Achievements.</span>
         </h1>
 
         <p>
@@ -53,27 +51,6 @@ function Certifications() {
           experiences that demonstrate my practical exposure to software
           development, defence technology and computer science.
         </p>
-      </section>
-
-
-      {/* Statistics */}
-      <section className="cert-stats">
-
-        <div className="cert-stat">
-          <strong>{certifications.length}+</strong>
-          <span>Certifications</span>
-        </div>
-
-        <div className="cert-stat">
-          <strong>2</strong>
-          <span>Organizations</span>
-        </div>
-
-        <div className="cert-stat">
-          <strong>2025–26</strong>
-          <span>Experience Period</span>
-        </div>
-
       </section>
 
 
@@ -142,14 +119,6 @@ function Certifications() {
                 </div>
 
 
-                {cert.certificateNo && (
-                  <div className="certificate-number">
-                    <span>Certificate No.</span>
-                    <strong>{cert.certificateNo}</strong>
-                  </div>
-                )}
-
-
                 <div className="certificate-tags">
 
                   {cert.tags.map((tag) => (
@@ -172,8 +141,15 @@ function Certifications() {
       {/* Bottom Section */}
       <section className="certification-note">
 
-        <div>
-          <span className="section-tag">CONTINUOUS LEARNING</span>
+        <div className="certification-note-content">
+
+          <div className="certification-note-label">
+            <span
+              className="certification-note-status-dot"
+              aria-hidden="true"
+            />
+            Continuous Learning
+          </div>
 
           <h2>
             Building knowledge through
@@ -185,6 +161,7 @@ function Certifications() {
             combining academic knowledge with real-world projects,
             internships and hands-on technical work.
           </p>
+
         </div>
 
       </section>
